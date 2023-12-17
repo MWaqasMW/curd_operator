@@ -14,11 +14,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ProtectedRoute>
         <RTKProvider>
           {children}
         </RTKProvider>
-        </ProtectedRoute>
       </body>
     </html>
   );

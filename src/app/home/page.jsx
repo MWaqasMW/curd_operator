@@ -3,6 +3,7 @@
 import React from "react";
 
 import { BsAlexa } from "react-icons/bs";
+import { useLogout } from "../api/useApi";
 const menuItems = [
   {
     name: "Home",
@@ -23,6 +24,15 @@ const menuItems = [
 ];
 
 export default function Home() {
+  const logoutMutation = useLogout();
+  const handlLogout = async () => {
+    try {
+      await logoutMutation.mutateAsync();
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   const toggleMenu = () => {
@@ -49,6 +59,9 @@ export default function Home() {
               </svg>
             </span>
             <span className="font-bold">DevUI</span>
+            <button onClick={handlLogout}>
+              {logoutMutation.isLoading ? "Loding..." : "Logout"}
+            </button>
           </div>
           <div className="hidden lg:block">
             <ul className="inline-flex space-x-8">

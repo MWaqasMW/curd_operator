@@ -2,11 +2,9 @@ import { useMutation } from 'react-query';
 import { makeRequest } from '../utlis/helper.js';
 import { BASE_URL } from '../utlis/constant.js';
 import { showError, showSuccess } from '../utlis/customToast.js';
+import { getCookie } from '../utlis/cookies.js';
 
-// const customHeaders = {
-//   Authorization: `Token ${token}`,
-//   "Content-type": "application/json"
-// }
+
 
 
 export const signup = async (userData) => {
@@ -38,3 +36,26 @@ export const login = async (userData)=>{
   }
 
 }
+
+
+export const logout = async () => {
+  const token = getCookie("token");
+  const customHeaders = {
+    Authorization: `Bearer ${token}`,
+    "Content-type": "application/json",
+  };
+  
+  try {
+    const response = await makeRequest(
+      `${BASE_URL}/auth/logout`,
+      'GET',
+      null,
+      customHeaders
+    );
+    return response;
+  } catch (error) {
+   
+  
+    throw error;
+  }
+};

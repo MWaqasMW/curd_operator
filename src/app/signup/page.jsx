@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState, useRef } from "react";
 import { ToastContainer } from "react-toastify";
-
+import { getDataFromStorage } from "../utlis/localstorage.js";
 import {
   Avatar,
   Box,
@@ -22,6 +22,7 @@ import { useFormik } from "formik";
 import { useMutation } from "react-query";
 import * as Yup from "yup";
 import { useSignup } from "../api/useApi.js";
+import { getCookie } from "../utlis/cookies.js";
 
 function Copyright(props) {
   return (
