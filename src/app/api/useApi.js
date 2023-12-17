@@ -56,10 +56,6 @@ export const useLogout=()=>{
       console.log("Logout Succ:", data);
       setCookie("token","")
       showSuccess("Logout successful");
-      setTimeout(()=>{
-
-        router.push("/login");
-      },1500)
     },
     onError: (error) => {
       console.log("Logout failed");

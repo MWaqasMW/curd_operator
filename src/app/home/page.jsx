@@ -1,9 +1,10 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { BsAlexa } from "react-icons/bs";
 import { useLogout } from "../api/useApi";
+import { getCookie } from "../utlis/cookies";
 const menuItems = [
   {
     name: "Home",
@@ -28,10 +29,19 @@ export default function Home() {
   const handlLogout = async () => {
     try {
       await logoutMutation.mutateAsync();
+      window.location.reload();
+      window.reload;
     } catch (err) {
       console.log(err);
     }
   };
+
+  // useEffect(() => {
+  //   const token = getCookie("token");
+  //   if (token) {
+  //     console.log("dsjkcsndcjksdncjkdsnckdsjnvckdfjnvkdfn ");
+  //   }
+  // }, [logoutMutation.isLoading]);
 
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 

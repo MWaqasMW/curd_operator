@@ -4,7 +4,7 @@ import Cookies from 'js-cookie'
 export  function middleware (request) {
 const path = request.nextUrl.pathname
 
-const isPublicPath = path === "/login" || path  === "/signup" || path === "privacy"
+const isPublicPath = path === "/login" 
 
 const token = request.cookies.get("token")?.value || ''
 

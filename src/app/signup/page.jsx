@@ -226,7 +226,7 @@ const Signup = () => {
             <button
               disabled={isDisabled || signupMutation.isLoading}
               type="submit"
-              className="text-white font-bold "
+              className="text-white font-bold cursor-pointer"
             >
               {signupMutation.isLoading ? "Signing up..." : "Signup"}
             </button>

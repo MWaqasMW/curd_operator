@@ -42,7 +42,6 @@ function Copyright(props) {
 const defaultTheme = createTheme();
 
 const Signup = () => {
-
   const loginMutation = useLogin();
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
