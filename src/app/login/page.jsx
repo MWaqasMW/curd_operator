@@ -21,23 +21,7 @@ import * as Yup from "yup";
 
 import { useLogin } from "../api/useApi";
 import { getCookie } from "../utlis/cookies";
-function Copyright(props) {
-  return (
-    <Typography
-      variant="body2"
-      color="text.secondary"
-      align="center"
-      {...props}
-    >
-      {"Copyright © "}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
+import { ToastContainer } from "react-toastify";
 
 const defaultTheme = createTheme();
 
@@ -88,6 +72,8 @@ const Signup = () => {
   }, [email, password]);
   return (
     <Container component="main" maxWidth="xs">
+      <ToastContainer />
+
       <CssBaseline />
       <Box
         sx={{
@@ -175,7 +161,6 @@ const Signup = () => {
           </Grid>
         </Box>
       </Box>
-      <Copyright sx={{ mt: 8, mb: 4 }} />
     </Container>
   );
 };

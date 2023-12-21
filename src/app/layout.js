@@ -3,6 +3,7 @@ import './globals.css';
 import RTKProvider from './qurey/Provider'; // Assuming this path is correct
 import 'react-toastify/dist/ReactToastify.css';
 import ProtectedRoute from './route/ProtectedRoute';
+import SidebarOne from './componets/SildeBar';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
@@ -14,6 +15,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
+        
         <RTKProvider>
           {children}
         </RTKProvider>

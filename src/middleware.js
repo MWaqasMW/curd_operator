@@ -1,6 +1,6 @@
 
 import { NextResponse } from 'next/server'
-import Cookies from 'js-cookie'
+
 export  function middleware (request) {
 const path = request.nextUrl.pathname
 
@@ -10,7 +10,7 @@ const token = request.cookies.get("token")?.value || ''
 
 
  if(isPublicPath && token){
-     return NextResponse.redirect(new URL ('/home' , request.nextUrl))
+     return NextResponse.redirect(new URL ('/dasboard' , request.nextUrl))
  }
   if(!isPublicPath && !token){
      return NextResponse.redirect(new URL ('/login' , request.nextUrl))
@@ -20,7 +20,7 @@ const token = request.cookies.get("token")?.value || ''
 export const config = {
   matcher: [
     "/",
-    "/home",
+    "/dasboard",
     "/profile",
     "/login",
     "/signup"

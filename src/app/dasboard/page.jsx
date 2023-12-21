@@ -1,11 +1,18 @@
-import React from "react";
+"use client";
 
-const Dashboard = () => {
+import React, { useState } from "react";
+import SidebarOne from "../componets/SildeBar";
+import TableTwo from "../componets/Tables";
+import ModalComponent from "../componets/CreateStudentModal";
+const page = () => {
   return (
     <div>
-      <div className="h-30">Dashboard</div>
+      <div className="flex">
+        <SidebarOne />
+        <TableTwo />
+      </div>
     </div>
   );
 };
 
-export default Dashboard;
+export default page;
